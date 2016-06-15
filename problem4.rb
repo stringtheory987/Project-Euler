@@ -1,10 +1,10 @@
 def pal (n)
-	x = n.to_s.split('') # turn our number into a string 
-	if x == x.reverse # so we can reverse it to see if it's a palindrome
-		return true
-	else
-		return false
-	end
+  x = n.to_s.split('') # turn our number into a string 
+  if x == x.reverse # so we can reverse it to see if it's a palindrome
+    return true
+  else
+    return false
+  end
 end
 
 
