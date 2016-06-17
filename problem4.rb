@@ -7,15 +7,18 @@ def pal (n)
   end
 end
 
-
-def largest_pal (range=111..999) # use range as a variable instead of loop
-nums = [] # must store array locally
+def find_max_pal (range=111..999) # use range as a variable instead of loop
+  max_pal = 0
   range.each do |a| # for each number in range starting with a
     range.each do |b| # then within first do statement do the same but with b
-      nums.push(a*b) 
+      answer = a*b
+      if pal(answer) == true && answer > max_pal 
+        max_pal -= max_pal
+        max_pal += answer
+      end
     end
-  end  
- nums.select{|n| pal(n)}.max # finds biggest palindrome using our array
+  end 
+return max_pal
 end
-puts largest_pal
 
+puts find_max_pal
