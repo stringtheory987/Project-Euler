@@ -11,10 +11,9 @@ def find_max_pal (range=111..999) # use range as a variable instead of loop
   max_pal = 0
   range.each do |a| # for each number in range starting with a
     range.each do |b| # then within first do statement do the same but with b
-      answer = a*b
-      if pal(answer) == true && answer > max_pal 
+      if pal(a*b) == true && (a*b) > max_pal 
         max_pal -= max_pal
-        max_pal += answer
+        max_pal += (a*b)
       end
     end
   end 
